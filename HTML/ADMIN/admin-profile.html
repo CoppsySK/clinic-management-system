@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="../../CSS/admin-style4.css">
+</head>
+<body>
+    <header>
+        <div class="profile-menu">
+            <span>Welcome, Admin</span>
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="manage-doctors.html">Manage Doctors</a></li>
+                <li><a href="manage-patients.html">Manage Patients</a></li>
+                <li><a href="manage-appointments.html">Manage Appointments</a></li>
+                <li><a href="admin-profile.html" class="active">Profile</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Admin Profile</h1>
+        <div id="profile-info">
+            <!-- Profile information will be displayed here dynamically -->
+        </div>
+        <div id="update-profile-form" style="display: none;">
+            <h2>Update Profile Information</h2>
+            <form id="update-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+        <button id="edit-profile-btn">Edit Profile</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="../../JS/admin-profile.js"></script>
+</body>
+</html>

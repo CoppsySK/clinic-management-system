@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="../../CSS/patient-dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="profile-menu">
+            <span>Welcome, <span id="fullname"></span></span>
+            <ul>
+                <li><a href="patient-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="book-appointment.html">Book Appointment</a></li>
+                <li><a href="view-appointments.html">View Appointments</a></li>
+                <li><a href="update-profile1.html">Profile</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Patient Dashboard</h1>
+        <div id="patient-info">
+            <!-- Patient information will be loaded here dynamically -->
+             
+        </div>
+        <div>
+            <p>No information available !! To upload information <a href="patientInfo.html">Click here</a></p>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA0w5fc73WS6x-UrPsLcBrOZSBSFoA0whQ",
+            authDomain: "intern2-6a933.firebaseapp.com",
+            databaseURL: "https://intern2-6a933-default-rtdb.firebaseio.com",
+            projectId: "intern2-6a933",
+            storageBucket: "intern2-6a933.appspot.com",
+            messagingSenderId: "949411148901",
+            appId: "1:949411148901:web:f01530cb50ff72e759828c"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Reference to the user's information in Firebase (adjust path as per your structure)
+        const userRef = ref(db, 'user1'); // Assuming 'user1' is the key under which patient information is stored
+
+        // Fetch and display patient information
+        onValue(userRef, (snapshot) => {
+            const userData = snapshot.val();
+            if (userData) {
+                // Update the DOM with patient information
+                document.getElementById('fullname').textContent = userData.fullname;
+
+                // Construct HTML for displaying all patient information
+                const patientInfoHTML = `
+                    <h2>Personal Information</h2>
+                    <p><strong>Full Name:</strong> ${userData.fullname}</p>
+                    <p><strong>Date of Birth:</strong> ${userData.dob}</p>
+                    <p><strong>Gender:</strong> ${userData.gender}</p>
+                    <p><strong>Blood Group:</strong> ${userData.bloodgroup}</p>
+                    <p><strong>Username:</strong> ${userData.username}</p>
+                    <p><strong>Address:</strong> ${userData.Address}</p>
+                    <p><strong>Phone:</strong> ${userData.Phone}</p>
+                `;
+
+                // Update the patient-info section with the fetched data
+                document.getElementById('patient-info').innerHTML = patientInfoHTML;
+            } else {
+                // Handle case where no data is found
+                document.getElementById('patient-info').innerHTML = '<p>No information available.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

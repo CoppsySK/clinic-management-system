@@ -1,0 +1,118 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.profile-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-menu ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.profile-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-menu ul li a:hover,
+.profile-menu ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    padding-top: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007acc;
+}
+
+#patients {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.patient:last-child {
+    border-bottom: none;
+}
+
+.patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patient-details {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.patient button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view {
+    background-color: #007acc;
+    color: #fff;
+}
+
+.btn-update {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-view:hover {
+    background-color: #005c99;
+}
+
+.btn-update:hover {
+    background-color: #218838;
+}

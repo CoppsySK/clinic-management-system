@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments</title>
+    <link rel="stylesheet" href="../../css/admin-style3.css">
+</head>
+<body>
+    <header>
+        <div class="profile-menu">
+            <span>Welcome, Admin</span>
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="manage-doctors.html">Manage Doctors</a></li>
+                <li><a href="manage-patients.html">Manage Patients</a></li>
+                <li><a href="manage-appointments1.html" class="active">Manage Appointments</a></li>
+                <li><a href="admin-profile.html">Profile</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Manage Appointments</h1>
+        <div id="appointment-list"></div>
+        <button id="add-appointment">Add Appointment</button>
+    </div>
+
+    <!-- Add Appointment Modal -->
+    <div id="addAppointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Appointment</h2>
+            <form id="add-appointment-form">
+                <div class="form-group">
+                    <label for="patient-name">Patient Name</label>
+                    <input type="text" id="patient-name" name="patient-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor-name">Doctor Name</label>
+                    <input type="text" id="doctor-name" name="doctor-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date">Date</label>
+                    <input type="date" id="appointment-date" name="appointment-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time">Time</label>
+                    <input type="time" id="appointment-time" name="appointment-time" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="../../JS/manage-appointments1.js"></script>
+</body>
+</html>

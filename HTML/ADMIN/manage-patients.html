@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Patients</title>
+    <link rel="stylesheet" href="../../CSS/admin-style2.css">
+</head>
+<body>
+    <header>
+        <div class="profile-menu">
+            <span>Welcome, Admin</span>
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="manage-doctors.html">Manage Doctors</a></li>
+                <li><a href="manage-patients.html" class="active">Manage Patients</a></li>
+                <li><a href="manage-appointments1.html">Manage Appointments</a></li>
+                <li><a href="admin-profile.html">Profile</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Manage Patients</h1>
+        <div id="patient-list"></div>
+        <button id="add-patient">Add Patient</button>
+    </div>
+
+    <!-- Add Patient Modal -->
+    <div id="addPatientModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Patient</h2>
+            <form id="add-patient-form">
+                <div class="form-group">
+                    <label for="patient-name">Full Name</label>
+                    <input type="text" id="patient-name" name="patient-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient-email">Email</label>
+                    <input type="email" id="patient-email" name="patient-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient-phone">Phone Number</label>
+                    <input type="tel" id="patient-phone" name="patient-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient-dob">Date of Birth</label>
+                    <input type="date" id="patient-dob" name="patient-dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient-condition">Condition</label>
+                    <input type="text" id="patient-condition" name="patient-condition" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="../../JS/admin-script3.js"></script>
+</body>
+</html>

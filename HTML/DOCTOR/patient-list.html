@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient List</title>
+    <link rel="stylesheet" href="../../CSS/style8.css">
+</head>
+<body>
+    <header>
+        <div class="profile-menu">
+            <span id="username">Welcome, Doctor</span>
+            <ul>
+                <li><a href="doctor-dashboard.html">Dashboard</a></li>
+                <li><a href="manage-appointments.html">Manage Appointments</a></li>
+                <li><a href="patient-list.html" class="active">Patients</a></li>
+                <li><a href="update-profile.html">Profile</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Patient List</h1>
+        <div id="patients">
+            <!-- Patients will be loaded here -->
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
+    <script src="../../JS/patient-list.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="../../CSS/patient-style.css">
+</head>
+<body>
+    <header>
+        <div class="profile-menu">
+            <span>Welcome, [Patient Name]</span>
+            <ul>
+                <li><a href="patient-dashboard.html">Dashboard</a></li>
+                <li><a href="book-appointment.html" class="active">Book Appointment</a></li>
+                <li><a href="view-appointments.html">View Appointments</a></li>
+                <li><a href="update-profile1.html">Profile</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Book Appointment</h1>
+        <form id="book-appointment-form">
+            <div class="form-group">
+                <label for="doctor">Select Doctor</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">Select a Doctor</option>
+                    <!-- Options will be dynamically populated -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="appointment-date">Appointment Date</label>
+                <input type="date" id="appointment-date" name="appointment-date" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-time">Appointment Time</label>
+                <input type="time" id="appointment-time" name="appointment-time" required>
+            </div>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="../../JS/patient-script.js"></script>
+</body>
+</html>
